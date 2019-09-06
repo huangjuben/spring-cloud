@@ -1,3 +1,29 @@
-11111111111111111
-2222222222222222
-33333333333333333
+spring:
+  application:
+    name: hello-spring-cloud-web-admin-feign
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+feign:
+  hystrix:
+    enabled: true
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: web-admin-feign
+      label: master
+      profile: dev
